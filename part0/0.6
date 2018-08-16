@@ -1,0 +1,21 @@
+kayttaja->selain:
+note left of selain
+Kayttaja täyttää muistiinpanokentän ja painaa "talleta"
+end note
+
+
+note right of selain
+ skripti lisää muistiinpanon itse sivulle
+end note
+
+
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_note_spa
+note left of palvelin
+  selain lähettää tiedot json muodossa
+end note
+palvelin->selain: status 201, viesti ("note created")
+
+note left of selain
+ kayttaja nakee sivun koko komeudessaan
+end note
+ 

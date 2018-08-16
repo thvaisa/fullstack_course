@@ -1,0 +1,28 @@
+kayttaja->selain:
+note left of selain
+Kayttaja painaa "muistiinpanot"
+end note
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes
+note left of palvelin
+  selain hakee sivun
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+note left of palvelin
+  selain skriptit ja tyylit
+end note
+
+palvelin->selain: status 200, .css
+palvelin->selain: status 200, .js
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin->selain: status 200, .json
+note left of palvelin
+ hakee lopulta kommentit
+end note
+
+note left of selain
+ kayttaja nakee sivun koko komeudessaan
+end note
